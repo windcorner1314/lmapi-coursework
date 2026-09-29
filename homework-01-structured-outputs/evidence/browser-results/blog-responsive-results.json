@@ -1,0 +1,37 @@
+[
+  {
+    "width": 375,
+    "client": 375,
+    "scroll": 375,
+    "navbar": 375,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "client": 768,
+    "scroll": 768,
+    "navbar": 768,
+    "overflow": false
+  },
+  {
+    "width": 820,
+    "client": 820,
+    "scroll": 820,
+    "navbar": 820,
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "client": 1024,
+    "scroll": 1024,
+    "navbar": 1022.96875,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "client": 1280,
+    "scroll": 1280,
+    "navbar": 1086.328125,
+    "overflow": false
+  }
+]

@@ -1,0 +1,27 @@
+---
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/700.css";
+import "@fontsource-variable/jetbrains-mono";
+import "../styles/homework.css";
+interface Props { title: string; description?: string; }
+const { title, description = "LMAPI 课堂作业与可交互学习实验。" } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} · 街角の风铃</title>
+    <link rel="icon" href="/favicon/miaomiao.jpeg" />
+  </head>
+  <body class="homework-page" data-no-swup>
+    <a class="hw-skip" href="#content">跳到正文</a>
+    <header class="hw-header">
+      <a class="hw-brand" href="/homework/" data-no-swup><span class="hw-brand-mark" aria-hidden="true">{ "{ }" }</span> 学习实验室 <span class="hw-mono hw-muted">/ LMAPI</span></a>
+      <nav aria-label="站点导航"><a href="/homework/" data-no-swup>作业目录</a><a href="/" data-no-swup>返回博客 <span aria-hidden="true">↗</span></a></nav>
+    </header>
+    <main id="content" class="hw-shell"><slot /></main>
+    <footer class="hw-footer"><span>街角の风铃 · LMAPI 学习记录</span><span>Astro 集成版 / 第一版 · 单文件交付要求待确认</span><a href="/homework/" data-no-swup>返回作业目录 ↑</a></footer>
+  </body>
+</html>

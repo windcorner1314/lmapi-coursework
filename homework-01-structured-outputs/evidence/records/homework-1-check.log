@@ -1,0 +1,52 @@
+> fuwari@0.1.1 check [PROJECT_ROOT]
+> astro check
+
+23:50:54 [content] Syncing content
+23:50:54 [content] Synced content
+23:50:54 [types] Generated 273ms
+23:50:54 [check] Getting diagnostics for Astro files in [PROJECT_ROOT]...
+src/components/Navbar.astro:54:14 - error ts(2322): Type '{ "client:only": string; }' is not assignable to type 'IntrinsicAttributes & Record<string, never>'.
+  Type '{ "client:only": string; }' is not assignable to type 'Record<string, never>'.
+    Property 'client:only' is incompatible with index signature.
+      Type 'string' is not assignable to type 'never'.
+
+54             <LightDarkSwitch client:only="svelte"></LightDarkSwitch>
+                ~~~~~~~~~~~~~~~
+
+src/layouts/MainGridLayout.astro:11:1 - warning ts(6192): All imports in import declaration are unused.
+
+ 11 import {
+    ~~~~~~~~
+ 12  BANNER_HEIGHT,
+    ~~~~~~~~~~~~~~~
+... 
+ 14  MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 15 } from "../constants/constants";
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/archive.astro:12:19 - error ts(2322): Type 'PostForList[]' is not assignable to type 'Post[]'.
+  Type 'PostForList' is not assignable to type 'Post'.
+    The types of 'data.category' are incompatible between these types.
+      Type 'string | null' is not assignable to type 'string | undefined'.
+        Type 'null' is not assignable to type 'string | undefined'.
+
+12     <ArchivePanel sortedPosts={sortedPostsList} client:only="svelte"></ArchivePanel>
+                     ~~~~~~~~~~~
+
+src/pages/posts/[...slug].astro:27:7 - warning ts(6133): 'postId' is declared but its value is never read.
+
+27 const postId = entry.data.post_id || entry.slug;  //拉取已有评论放在评论区要用到post_id
+         ~~~~~~
+
+src/plugins/expressive-code/language-badge.ts:10:16 - warning ts(6133): '_cssVar' is declared but its value is never read.
+
+10   baseStyles: ({ _cssVar }) => `
+                  ~~~~~~~~~~~
+
+Result (61 files): 
+- 2 errors
+- 0 warnings
+- 3 hints
+
+ ELIFECYCLE  Command failed with exit code 1.

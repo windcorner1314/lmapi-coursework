@@ -1,0 +1,74 @@
+[
+  {
+    "path": "/",
+    "homework": false,
+    "doc": "document-5",
+    "errors": [],
+    "labReady": false,
+    "navbar": true,
+    "step": "blog direct"
+  },
+  {
+    "path": "/homework/",
+    "homework": true,
+    "doc": "document-6",
+    "errors": [],
+    "labReady": false,
+    "navbar": false,
+    "step": "blog -> directory"
+  },
+  {
+    "path": "/homework/1/",
+    "homework": true,
+    "doc": "document-7",
+    "errors": [],
+    "labReady": true,
+    "navbar": false,
+    "step": "directory -> assignment"
+  },
+  {
+    "path": "/homework/",
+    "homework": true,
+    "doc": "document-6",
+    "errors": [],
+    "labReady": false,
+    "navbar": false,
+    "step": "back -> directory"
+  },
+  {
+    "path": "/homework/1/",
+    "homework": true,
+    "doc": "document-7",
+    "errors": [],
+    "labReady": true,
+    "navbar": false,
+    "step": "forward -> assignment"
+  },
+  {
+    "path": "/",
+    "homework": false,
+    "doc": "document-8",
+    "errors": [],
+    "labReady": false,
+    "navbar": true,
+    "step": "assignment -> blog"
+  },
+  {
+    "path": "/homework/1/",
+    "homework": true,
+    "doc": "document-7",
+    "errors": [],
+    "labReady": true,
+    "navbar": false,
+    "step": "back -> assignment"
+  },
+  {
+    "path": "/",
+    "homework": false,
+    "doc": "document-8",
+    "errors": [],
+    "labReady": false,
+    "navbar": true,
+    "step": "forward -> blog"
+  }
+]

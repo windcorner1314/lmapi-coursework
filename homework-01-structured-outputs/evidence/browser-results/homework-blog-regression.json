@@ -1,0 +1,72 @@
+[
+  {
+    "path": "/",
+    "title": "🐴 街角の风铃 - 个人blog",
+    "doc": "document-1",
+    "navbar": true,
+    "main": true,
+    "homework": false,
+    "errors": [],
+    "missingImages": [],
+    "apiStatus": [],
+    "step": "home"
+  },
+  {
+    "path": "/about/",
+    "title": "关于 - 街角の风铃",
+    "doc": "document-1",
+    "navbar": true,
+    "main": true,
+    "homework": false,
+    "errors": [],
+    "missingImages": [],
+    "apiStatus": [],
+    "step": "blog Swup -> about"
+  },
+  {
+    "path": "/posts/ailearning/git/",
+    "title": "🐴 git by 技术爬爬虾 - 街角の风铃",
+    "doc": "document-2",
+    "navbar": true,
+    "main": true,
+    "homework": false,
+    "errors": [],
+    "missingImages": [],
+    "apiStatus": [
+      {
+        "url": "http://127.0.0.1:4321/api/comments/?post_id=0010",
+        "status": 404
+      }
+    ],
+    "step": "article"
+  },
+  {
+    "path": "/comments/",
+    "title": "🐴 评论 - 街角の风铃",
+    "doc": "document-3",
+    "navbar": true,
+    "main": true,
+    "homework": false,
+    "errors": [],
+    "missingImages": [],
+    "apiStatus": [
+      {
+        "url": "http://127.0.0.1:4321/api/comments/all/",
+        "status": 404
+      }
+    ],
+    "step": "comments"
+  },
+  {
+    "path": "/archive/",
+    "title": "🐴 归档 - 街角の风铃",
+    "doc": "document-4",
+    "navbar": true,
+    "main": true,
+    "homework": false,
+    "errors": [],
+    "missingImages": [],
+    "apiStatus": [],
+    "step": "archive"
+  }
+]

@@ -1,0 +1,19 @@
+✔ homework routes have independent layout and accessible teaching content (1.00136ms)
+✔ homework layout scopes its styles and provides full-navigation exits (0.264214ms)
+✔ Swup ignores homework in both directions but retains blog navigation (4.293807ms)
+✔ exports the exact fixed teaching schema (0.965914ms)
+✔ accepts a valid object including zero and false (0.26047ms)
+✔ requires every field as an own property (0.256857ms)
+✔ enforces field types without coercion, rejecting fractions and infinity (0.247514ms)
+✔ rejects extra own keys including prototype-related names (0.62854ms)
+✔ exports six local teaching samples with verified expectations (0.299369ms)
+✔ rejects non-object roots including null and arrays (0.081684ms)
+✔ syntax failures do not attempt schema validation or execute code (0.136812ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76.962837

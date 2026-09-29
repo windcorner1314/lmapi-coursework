@@ -1,0 +1,114 @@
+/* Only homework documents opt into these styles. No blog selectors. */
+.homework-page {
+  --hw-paper: #f5f4ee; --hw-ink: #1c302d; --hw-muted: #52645f;
+  --hw-accent: #126b57; --hw-line: #cfd8d0; --hw-dark: #192e2b;
+  margin: 0; background: var(--hw-paper); color: var(--hw-ink);
+  font-family: Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 16px; line-height: 1.8; color-scheme: light;
+}
+.homework-page *, .homework-page *::before, .homework-page *::after { box-sizing: border-box; }
+.homework-page a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+.homework-page a:hover { color: var(--hw-accent); }
+.homework-page :focus-visible { outline: 3px solid #c36b24; outline-offset: 4px; }
+.homework-page h1, .homework-page h2, .homework-page h3, .homework-page p { margin: 0; }
+.homework-page h1 { font-size: clamp(2.7rem, 5.5vw, 5.1rem); line-height: 1.1; font-weight: 700; letter-spacing: -.045em; }
+.homework-page h2 { font-size: clamp(1.65rem, 3vw, 2.25rem); line-height: 1.4; letter-spacing: -.035em; }
+.homework-page h3 { font-size: 1.12rem; line-height: 1.5; }
+.homework-page p + p { margin-top: 1rem; }
+.homework-page code, .homework-page pre, .homework-page .hw-mono { font-family: "JetBrains Mono Variable", monospace; }
+.homework-page code { font-size: .86em; overflow-wrap: anywhere; }
+.homework-page pre { margin: 0; max-width: 100%; overflow-x: auto; padding: 1.4rem; background: var(--hw-dark); color: #dcece4; font-size: .8rem; line-height: 1.85; border-radius: 6px; }
+.homework-page pre code { font-size: inherit; overflow-wrap: normal; }
+.homework-page ul, .homework-page ol { padding-left: 1.3rem; margin: .8rem 0 0; }
+.homework-page li + li { margin-top: .45rem; }
+.homework-page .hw-muted { color: var(--hw-muted); }
+.homework-page .hw-eyebrow { display: block; color: var(--hw-accent); font: 700 .76rem/1.6 "JetBrains Mono Variable", monospace; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1rem; }
+.homework-page .hw-header { max-width: 1440px; margin: auto; padding: 1.1rem clamp(1rem, 4vw, 4rem); display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--hw-line); gap: 1rem; }
+.homework-page .hw-header a { text-decoration: none; }
+.homework-page .hw-header nav { display: flex; gap: 1.7rem; font-size: .88rem; }
+.homework-page .hw-header nav a { min-height: 44px; display: inline-flex; align-items: center; }
+.homework-page .hw-brand { display: flex; gap: .7rem; align-items: center; font-weight: 700; }
+.homework-page .hw-brand-mark { background: var(--hw-accent); color: white; display: grid; place-items: center; width: 34px; height: 34px; font-family: monospace; border-radius: 5px; }
+.homework-page .hw-brand .hw-muted { font-size: .7rem; font-weight: 400; }
+.homework-page .hw-shell { max-width: 1280px; margin: auto; padding: 0 clamp(1.1rem, 4vw, 3.5rem); }
+.homework-page .hw-hero { padding: 5rem 0 3.5rem; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, .9fr); align-items: center; gap: 3rem; }
+.homework-page .hw-subtitle { font-size: clamp(1.25rem, 2.5vw, 1.9rem); margin-top: 1.3rem; line-height: 1.5; }
+.homework-page .hw-lead { max-width: 39rem; color: var(--hw-muted); margin-top: 1.4rem; }
+.homework-page .hw-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+.homework-page .hw-button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: .7rem; padding: .6rem 1.2rem; border: 1px solid var(--hw-accent); background: var(--hw-accent); color: #fff; font: inherit; font-size: .9rem; font-weight: 700; border-radius: 4px; cursor: pointer; text-decoration: none; }
+.homework-page .hw-button:hover { background: #0b5142; color: white; }
+.homework-page .hw-button-secondary { background: transparent; color: var(--hw-accent); }
+.homework-page .hw-hero-code { background: var(--hw-dark); color: #dcece4; border-radius: 8px; box-shadow: 10px 10px 0 #dde5d9; overflow: hidden; }
+.homework-page .hw-code-bar { padding: .8rem 1.3rem; display: flex; justify-content: space-between; gap: .5rem; border-bottom: 1px solid #385049; font-size: .72rem; letter-spacing: .02em; }
+.homework-page .hw-hero-code pre { border-radius: 0; padding-top: 1.7rem; }
+.homework-page .hw-code-note { padding: .9rem 1.3rem; font-size: .75rem; color: #c6d8cd; border-top: 1px solid #385049; }
+.homework-page .hw-status-dot { color: #94d1ac; }
+.homework-page .hw-meta { border-top: 1px solid var(--hw-line); border-bottom: 1px solid var(--hw-line); padding: .8rem 0; display: flex; flex-wrap: wrap; gap: .4rem 2rem; font-size: .76rem; color: var(--hw-muted); }
+.homework-page .hw-article-grid { display: grid; grid-template-columns: 155px minmax(0, 1fr); gap: 3rem; margin-top: 3.5rem; }
+.homework-page .hw-toc { position: sticky; top: 1.5rem; align-self: start; font-size: .8rem; }
+.homework-page .hw-toc a { display: block; padding: .6rem 0; text-decoration: none; }
+.homework-page .hw-toc span { font: .7rem "JetBrains Mono Variable", monospace; margin-right: .8rem; color: var(--hw-accent); }
+.homework-page .hw-section { padding-bottom: 4rem; scroll-margin-top: 1.5rem; min-width: 0; }
+.homework-page .hw-section + .hw-section { border-top: 1px solid var(--hw-line); padding-top: 3rem; }
+.homework-page .hw-section-intro { color: var(--hw-muted); margin-top: .9rem; margin-bottom: 1.6rem; max-width: 48rem; }
+.homework-page .hw-table-wrap { max-width: 100%; overflow-x: auto; border: 1px solid var(--hw-line); border-radius: 5px; }
+.homework-page table { width: 100%; border-collapse: collapse; font-size: .84rem; text-align: left; }
+.homework-page th, .homework-page td { padding: 1rem; border-bottom: 1px solid var(--hw-line); vertical-align: top; }
+.homework-page th { background: #e8eee5; font-weight: 700; }
+.homework-page tr:last-child td { border-bottom: 0; }
+.homework-page .hw-note { background: #e6ede2; border-radius: 5px; padding: 1.1rem 1.3rem; font-size: .86rem; margin-top: 1.3rem; }
+.homework-page .hw-lab { border: 1px solid var(--hw-line); border-radius: 8px; padding: 1.3rem; background: #fafbf7; min-width: 0; }
+.homework-page .hw-lab-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 1.2rem; margin-top: 1.2rem; }
+.homework-page .hw-lab-grid > *, .homework-page .hw-article-grid > * { min-width: 0; }
+.homework-page .hw-lab label, .homework-page .hw-panel-label { display: block; font-size: .8rem; font-weight: 700; margin-bottom: .55rem; }
+.homework-page .hw-lab textarea { width: 100%; min-height: 240px; resize: vertical; padding: 1rem; background: white; color: #233e37; border: 1px solid #91a59a; border-radius: 5px; font: .82rem/1.8 "JetBrains Mono Variable", monospace; tab-size: 2; }
+.homework-page .hw-lab select { min-width: 0; max-width: 100%; min-height: 44px; padding: .6rem; background: white; color: var(--hw-ink); border: 1px solid #91a59a; border-radius: 4px; font: inherit; font-size: .85rem; }
+.homework-page .hw-controls { display: flex; flex-wrap: wrap; align-items: end; gap: .7rem; }
+.homework-page .hw-controls label { margin-bottom: 0; }
+.homework-page .hw-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+.homework-page .hw-result { border: 1px solid var(--hw-line); border-radius: 5px; padding: 1rem; font-size: .85rem; overflow-wrap: anywhere; }
+.homework-page .hw-result strong { display: block; margin: .3rem 0; }
+.homework-page .hw-result[data-state="pass"] { background: #e7f1e5; border-color: #84a88b; }
+.homework-page .hw-result[data-state="fail"] { background: #fff0e7; border-color: #c78861; }
+.homework-page .hw-result pre { margin-top: .7rem; max-height: 230px; font-size: .72rem; padding: .8rem; }
+.homework-page .hw-small { font-size: .78rem; color: var(--hw-muted); }
+.homework-page .hw-api-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.3rem; }
+.homework-page .hw-api-grid > * { min-width: 0; }
+.homework-page .hw-api-grid h3 { margin-bottom: .7rem; }
+.homework-page .hw-boundary { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 1rem; padding: 1.2rem 0; border-bottom: 1px solid var(--hw-line); font-size: .9rem; }
+.homework-page .hw-evidence { list-style: none; padding: 0; }
+.homework-page .hw-evidence li { padding: 1.2rem 0; border-bottom: 1px solid var(--hw-line); }
+.homework-page .hw-tag { display: inline-block; font: .7rem "JetBrains Mono Variable", monospace; border: 1px solid #97aaa0; border-radius: 3px; padding: .3rem .5rem; margin-bottom: .6rem; color: #3b5d4e; }
+.homework-page .hw-pending { color: #80521e; border-color: #b59a70; }
+.homework-page .hw-references { font-size: .88rem; }
+.homework-page .hw-references a { overflow-wrap: anywhere; }
+.homework-page .hw-conclusion { padding: 2rem; background: var(--hw-dark); color: #edf4ed; border-radius: 6px; margin-top: 1.5rem; }
+.homework-page .hw-conclusion p { margin-top: 1rem; }
+.homework-page .hw-footer { max-width: 1280px; margin: 2rem auto 0; padding: 1.5rem clamp(1.1rem, 4vw, 3.5rem); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .8rem; border-top: 1px solid var(--hw-line); font-size: .75rem; color: var(--hw-muted); }
+.homework-page .hw-skip { position: absolute; left: 1rem; top: -100px; padding: 1rem; background: white; z-index: 10; }
+.homework-page .hw-skip:focus { top: 1rem; }
+.homework-page .hw-index-head { padding: 5rem 0 3rem; max-width: 800px; }
+.homework-page .hw-index-head h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+.homework-page .hw-assignment { display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; gap: 1.5rem; align-items: center; border-top: 1px solid var(--hw-line); border-bottom: 1px solid var(--hw-line); padding: 2rem 0; }
+.homework-page .hw-assignment > .hw-mono { font-size: 2rem; color: var(--hw-accent); }
+@media (max-width: 900px) {
+  .homework-page .hw-article-grid { grid-template-columns: minmax(0, 1fr); gap: 1.8rem; }
+  .homework-page .hw-toc { position: static; display: flex; flex-wrap: wrap; gap: 0 1.3rem; padding-bottom: 1rem; border-bottom: 1px solid var(--hw-line); }
+  .homework-page .hw-toc .hw-eyebrow { width: 100%; margin: 0; }
+  .homework-page .hw-hero { gap: 2rem; }
+}
+@media (max-width: 640px) {
+  .homework-page .hw-header { align-items: start; flex-direction: column; gap: .5rem; }
+  .homework-page .hw-header nav { width: 100%; justify-content: space-between; }
+  .homework-page .hw-hero { grid-template-columns: minmax(0, 1fr); padding-top: 2.5rem; }
+  .homework-page .hw-lab-grid, .homework-page .hw-results { grid-template-columns: minmax(0, 1fr); }
+  .homework-page .hw-lab { padding: .9rem; }
+  .homework-page .hw-boundary { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+  .homework-page .hw-assignment { grid-template-columns: 45px minmax(0, 1fr); gap: .8rem; }
+  .homework-page .hw-assignment .hw-button { grid-column: 2; justify-self: start; }
+  .homework-page .hw-brand .hw-muted { display: none; }
+  .homework-page th, .homework-page td { padding: .7rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .homework-page *, .homework-page *::before, .homework-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

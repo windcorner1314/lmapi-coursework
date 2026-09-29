@@ -1,0 +1,30 @@
+diff --git a/astro.config.mjs b/astro.config.mjs
+index 0bb1df3..f0d560d 100644
+--- a/astro.config.mjs
++++ b/astro.config.mjs
+@@ -38,6 +38,9 @@ export default defineConfig({
+ 			animationClass: "transition-swup-", // see https://swup.js.org/options/#animationselector
+ 			// the default value `transition-` cause transition delay
+ 			// when the Tailwind class `transition-all` is used
++			// Independent homework documents require full navigation in both directions.
++			ignore: (href) => /^\/homework(?:\/|$)/.test(new URL(href, window.location.href).pathname)
++				|| /^\/homework(?:\/|$)/.test(window.location.pathname),
+ 			containers: ["main", "#toc"],
+ 			smoothScrolling: true,
+ 			cache: true,
+diff --git a/src/config.ts b/src/config.ts
+index e22ad48..f9c1a52 100644
+--- a/src/config.ts
++++ b/src/config.ts
+@@ -45,6 +45,11 @@ export const navBarConfig: NavBarConfig = {
+ 		LinkPreset.Home,
+ 		LinkPreset.Archive,
+ 		LinkPreset.About,
++		{
++			name: "作业",
++			url: "/homework/",
++			external: false,
++		},
+ 		/*{
+ 			name: "GitHub",
+ 			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added

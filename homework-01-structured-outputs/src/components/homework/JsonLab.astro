@@ -1,0 +1,76 @@
+---
+import { schema, samples } from "./validator";
+---
+<section class="hw-lab" aria-label="JSON 校验实验台">
+  <span class="hw-tag">LOCAL DEMO / 本地教学演示</span>
+  <p class="hw-small" id="lab-help">预设样例是人为编写的教学数据，不是 API 返回。校验只在浏览器中运行，不调用模型、不上传输入。先加载样例，再点击校验；也可以自由修改 JSON。</p>
+  <div class="hw-lab-grid">
+    <div>
+      <span class="hw-panel-label">01 / 固定 Schema · 课程摘录</span>
+      <pre tabindex="0" aria-label="固定 JSON Schema"><code>{JSON.stringify(schema, null, 2)}</code></pre>
+    </div>
+    <div>
+      <div class="hw-controls">
+        <label for="sample-picker">选择教学样例<br /><select id="sample-picker">{samples.map(sample => <option value={sample.id}>{sample.label}</option>)}</select></label>
+        <button class="hw-button hw-button-secondary" id="load-sample" type="button" disabled>加载样例</button>
+      </div>
+      <label for="json-input" style="margin-top: 1rem">02 / 编辑 JSON</label>
+      <textarea id="json-input" spellcheck="false" aria-describedby="lab-help lab-limit" maxlength="20000">{samples[0].json}</textarea>
+      <button class="hw-button" type="button" id="validate-json" style="margin-top: .6rem" disabled>校验 JSON <span aria-hidden="true">→</span></button>
+      <p class="hw-small" id="lab-limit" style="margin-top: .6rem">输入上限 20,000 字符。Schema 固定，不提供任意 Schema 编辑。</p>
+    </div>
+  </div>
+  <div class="hw-results" aria-live="polite" aria-atomic="true">
+    <div class="hw-result" id="parse-result" data-state="idle"><span class="hw-mono hw-small">STEP 1 / JSON.parse</span><strong id="parse-status">等待校验</strong><p id="parse-detail">先检查是否为合法 JSON。</p><pre id="parsed-value" hidden tabindex="0" aria-label="解析后的 JSON"></pre></div>
+    <div class="hw-result" id="schema-result" data-state="idle"><span class="hw-mono hw-small">STEP 2 / Schema</span><strong id="schema-status">等待校验</strong><p id="schema-detail">再检查字段、类型及额外属性。</p><ul id="schema-errors"></ul></div>
+  </div>
+  <p class="hw-small" style="margin-top: 1rem">支持范围：本页固定 Schema 中的 object / string / integer / boolean、properties、required、additionalProperties: false。不支持 $ref、组合规则、数组、format、正则或数值范围等通用规则；这不是完整 JSON Schema 验证器，也不是两家 API 支持子集的实现。</p>
+  <noscript><p class="hw-note">JavaScript 未启用，实验按钮不可用；Schema、概念、样例预期和全文仍可阅读。</p></noscript>
+</section>
+<script>
+  import { samples, validateJSON } from "./validator";
+  const input = document.querySelector<HTMLTextAreaElement>("#json-input")!;
+  const picker = document.querySelector<HTMLSelectElement>("#sample-picker")!;
+  const load = document.querySelector<HTMLButtonElement>("#load-sample")!;
+  const validate = document.querySelector<HTMLButtonElement>("#validate-json")!;
+  const parsePanel = document.querySelector<HTMLElement>("#parse-result")!;
+  const schemaPanel = document.querySelector<HTMLElement>("#schema-result")!;
+  const parsed = document.querySelector<HTMLElement>("#parsed-value")!;
+  const errors = document.querySelector<HTMLElement>("#schema-errors")!;
+  const text = (id: string, value: string) => { document.getElementById(id)!.textContent = value; };
+  function reset() {
+    parsePanel.dataset.state = schemaPanel.dataset.state = "idle";
+    text("parse-status", "等待校验");
+    text("schema-status", "等待校验");
+    text("parse-detail", "输入已更新，请点击校验。");
+    text("schema-detail", "尚未检查当前输入。");
+    errors.replaceChildren();
+    parsed.hidden = true;
+    parsed.textContent = "";
+  }
+  load.disabled = validate.disabled = false;
+  load.addEventListener("click", () => {
+    const sample = samples.find(item => item.id === picker.value);
+    if (!sample) return;
+    input.value = sample.json;
+    reset();
+  });
+  input.addEventListener("input", reset);
+  validate.addEventListener("click", () => {
+    const result = validateJSON(input.value);
+    parsePanel.dataset.state = result.parseOk ? "pass" : "fail";
+    schemaPanel.dataset.state = result.schemaOk === null ? "idle" : result.schemaOk ? "pass" : "fail";
+    text("parse-status", result.parseOk ? "解析通过" : "解析失败");
+    text("parse-detail", result.parseMessage);
+    text("schema-status", result.schemaOk === null ? "未执行" : result.schemaOk ? "Schema 校验通过" : "Schema 校验失败");
+    text("schema-detail", result.schemaOk === null ? "先修复 JSON 语法，再检查结构。" : result.schemaOk ? "仅说明结构合规，事实与业务规则仍需另行核验。" : "JSON 语法合法，但不符合本页固定 Schema：");
+    parsed.hidden = !result.parseOk;
+    parsed.textContent = result.parseOk ? JSON.stringify(JSON.parse(input.value), null, 2) : "";
+    errors.replaceChildren();
+    if (result.parseOk) for (const message of result.errors) {
+      const li = document.createElement("li");
+      li.textContent = message;
+      errors.append(li);
+    }
+  });
+</script>

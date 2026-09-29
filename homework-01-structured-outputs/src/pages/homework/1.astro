@@ -1,0 +1,126 @@
+---
+import HomeworkLayout from "../../layouts/HomeworkLayout.astro";
+import JsonLab from "../../components/homework/JsonLab.astro";
+const openaiCode = `// JavaScript SDK 请求形状示意；未在本页执行
+// openai：服务端 SDK client；model：支持该功能的模型
+// schema：与上方实验台相同的固定 Schema
+const response = await openai.responses.create({
+  model,
+  input: "提取课程摘录：JSON Schema，20 分钟，尚未核实。",
+  text: { format: {
+    type: "json_schema",
+    name: "lesson_note",
+    strict: true,
+    schema
+  } }
+});
+// 先检查 response.status / incomplete_details
+// 再检查 output 中的 refusal 内容块，最后消费结果`;
+const anthropicCode = `// JavaScript SDK 请求形状示意；未在本页执行
+// anthropic：服务端 SDK client；model：支持该功能的模型
+// schema：与上方实验台相同的固定 Schema
+const response = await anthropic.messages.create({
+  model,
+  max_tokens: 1024,
+  messages: [{ role: "user", content:
+    "提取课程摘录：JSON Schema，20 分钟，尚未核实。" }],
+  output_config: { format: {
+    type: "json_schema",
+    schema
+  } }
+});
+// 先检查 stop_reason（refusal / max_tokens）
+// 确认正常完成，再读取 text 内容块并解析`;
+const preview = `{
+  "topic": "JSON Schema",
+  "minutes": 20,
+  "verified": false
+}`;
+---
+<HomeworkLayout title="Structured Outputs：从 JSON 到 Schema" description="第一次 LMAPI 作业：区分 Prompt、JSON 模式与 Schema 约束，通过本地 JSON 校验实验理解结构保证与事实正确的边界。">
+  <article data-pagefind-body>
+    <header class="hw-hero">
+      <div>
+        <span class="hw-eyebrow">LMAPI / Assignment 01 · 选题 B</span>
+        <h1 data-pagefind-meta="title">Structured<br />Outputs<span style="color: var(--hw-accent)">.</span></h1>
+        <p class="hw-subtitle">从“请输出 JSON”<br />到 Schema 约束。</p>
+        <p class="hw-lead">能被解析，不代表能被程序安全使用。把输出结构写成一份契约，再分清它能保证什么、不能保证什么。</p>
+        <div class="hw-actions"><a class="hw-button" href="#lab">进入校验实验台 <span aria-hidden="true">↓</span></a><a class="hw-button hw-button-secondary" href="#concepts">先看三个概念</a></div>
+      </div>
+      <div class="hw-hero-code" aria-label="课程摘录教学样例">
+        <div class="hw-code-bar hw-mono"><span>lesson-note.json</span><span class="hw-status-dot">● 预设样例</span></div>
+        <pre tabindex="0"><code>{preview}</code></pre>
+        <div class="hw-code-note">语法合法 → 结构合规 → 事实仍需核验</div>
+      </div>
+    </header>
+    <div class="hw-meta"><span>核心问题：输出如何成为可靠的程序输入？</span><span>本地教学演示 · 无模型 API 请求</span><span>Astro 集成版 · v1</span></div>
+    <div class="hw-article-grid">
+      <nav class="hw-toc" aria-label="本页章节">
+        <strong class="hw-eyebrow">On this page</strong>
+        <a href="#concepts"><span>01</span>三种约束</a><a href="#lab"><span>02</span>动手校验</a><a href="#api"><span>03</span>API 对比</a><a href="#boundaries"><span>04</span>保证的边界</a><a href="#evidence"><span>05</span>实验记录</a><a href="#references"><span>06</span>引用与总结</a>
+      </nav>
+      <div>
+        <section id="concepts" class="hw-section">
+          <span class="hw-eyebrow">01 / Concept</span><h2>不是所有“JSON 输出”，都有同样的保证。</h2>
+          <p class="hw-section-intro">假设我们要提取一条课程记录：主题 topic、时长 minutes、是否核实 verified。程序需要的不只是大括号，而是字段存在、类型正确、没有意外字段。</p>
+          <div class="hw-table-wrap" tabindex="0" role="region" aria-label="三种输出方式对比表">
+            <table><thead><tr><th scope="col">方式</th><th scope="col">约束在哪里</th><th scope="col">能保证什么</th><th scope="col">仍可能遇到什么</th></tr></thead><tbody>
+              <tr><td><strong>Prompt 要求 JSON</strong></td><td>自然语言：“只输出 JSON”</td><td>只是指令意图，没有接口级结构保证</td><td>解释文字、代码围栏、语法或字段错误</td></tr>
+              <tr><td><strong>JSON 模式</strong></td><td>API 格式选项，如 OpenAI 的 json_object</td><td>正常完成时生成合法 JSON；仍需处理异常结束</td><td>缺字段、类型不符、多余字段</td></tr>
+              <tr><td><strong>Schema 约束</strong></td><td>API 接收受支持的 Schema，启用结构化输出</td><td>在支持范围内，正常完成且未拒绝的输出符合结构</td><td>事实错误、拒绝、截断或 Schema 不受支持</td></tr>
+            </tbody></table>
+          </div>
+          <p class="hw-note">JSON.parse 回答“这是合法 JSON 吗？”；Schema 校验回答“它符合约定的结构吗？”；事实核验回答“它说的是真的吗？”——这三步不能互相替代。<a href="#ref-openai">[1]</a></p>
+        </section>
+        <section id="lab" class="hw-section">
+          <span class="hw-eyebrow">02 / Interactive lab</span><h2>让错误发生在这里，而不是下游程序。</h2>
+          <p class="hw-section-intro">先加载“字段类型错误”：它能通过 JSON 解析，却通不过 Schema。再把带引号的数字改为整数，观察两个结果如何变化。</p>
+          <JsonLab />
+          <details class="hw-note"><summary>样例预期：无 JavaScript 时也能阅读</summary><ul><li>合法样例：解析通过，Schema 通过。</li><li>JSON 语法错误：解析失败，Schema 不执行。</li><li>缺失必填字段：解析通过，Schema 失败。</li><li>字段类型错误：解析通过，Schema 失败；字符串 "20" 不是整数 20。</li><li>多余字段：解析通过，Schema 失败；additionalProperties: false 拒绝未声明属性。</li><li>结构正确但观点错误：两项通过；“Schema 合规意味着事实一定正确”依然是错误观点。</li></ul></details>
+          <p class="hw-small" style="margin-top: 1rem">实验是在生成之后检查数据；真正的 Structured Outputs 在模型生成时施加约束。本页没有实现受约束解码，也没有测量模型遵循率。</p>
+        </section>
+        <section id="api" class="hw-section">
+          <span class="hw-eyebrow">03 / API shapes</span><h2>同一个 Schema，不同的请求入口。</h2>
+          <p class="hw-section-intro">以下使用同一份课程摘录 Schema。代码只比较请求形状，不是可直接运行的完整脚本；SDK client 和受支持的 model 需在服务端配置。本页没有安装 SDK 或发起 API 请求。</p>
+          <div class="hw-api-grid">
+            <div><h3>OpenAI · Responses API <a href="#ref-openai">[1]</a></h3><pre tabindex="0" aria-label="OpenAI 请求代码"><code>{openaiCode}</code></pre></div>
+            <div><h3>Anthropic · Messages API <a href="#ref-anthropic">[2]</a></h3><pre tabindex="0" aria-label="Anthropic 请求代码"><code>{anthropicCode}</code></pre></div>
+          </div>
+          <p class="hw-note">不要混用参数：OpenAI Responses 是 <code>text.format</code>；Chat Completions 是 <code>response_format.json_schema</code>；Anthropic Messages 是 <code>output_config.format</code>。Anthropic 的 strict tool use 是另一种用途，不是在 format 里照搬一个 <code>strict: true</code>。<a href="#ref-migration">[3]</a></p>
+          <p class="hw-small" style="margin-top: 1rem">示例不绑定某个模型型号；实际调用前核对账户可用模型、SDK 版本和 Schema 支持范围。不要把 API Key 放进网页、public 或前端脚本。</p>
+        </section>
+        <section id="boundaries" class="hw-section">
+          <span class="hw-eyebrow">04 / Failure boundaries</span><h2>结构保证，不等于正确性保证。</h2>
+          <p class="hw-section-intro">把“解析成功”当作任务完成，是最容易忽略的一步。应用需要为异常状态保留独立分支，而不是对所有响应直接 JSON.parse。</p>
+          <div class="hw-boundary"><h3>事实错误</h3><p>topic 可以是任意字符串，因此错误观点也能通过当前 Schema；模型输出的 verified=true 只是一个布尔值，不是独立核验的证据。回到原始材料、引用或业务规则验证内容。<a href="#ref-openai">[1]</a></p></div>
+          <div class="hw-boundary"><h3>安全拒绝</h3><p>拒绝可以优先于目标结构。OpenAI Responses 检查 refusal 内容块；Anthropic 检查拒绝停止原因。将拒绝显示为拒绝，不伪造一份“结构正确的答案”。<a href="#ref-openai">[1]</a> <a href="#ref-anthropic">[2]</a></p></div>
+          <div class="hw-boundary"><h3>输出截断</h3><p>OpenAI 的 incomplete / max_output_tokens、Anthropic 的 stop_reason=max_tokens 都需要单独处理。不能给半段 JSON 补个右括号就当作完整结果；应调整预算或任务，再按明确策略重试。</p></div>
+          <div class="hw-boundary"><h3>Schema 不支持</h3><p>两家只支持各自的 JSON Schema 子集。OpenAI 严格模式要求对象 additionalProperties=false，字段列入 required；可空字段可通过 nullable 表达。不要假设任意复杂 Schema 都能提交，先处理接口校验错误，再按对应文档调整。<a href="#ref-openai">[1]</a></p></div>
+          <div class="hw-boundary"><h3>业务仍有边界</h3><p>本实验只约束 minutes 为整数，没有约束它非负，也不验证 topic 的来源。生产应用还需业务校验、异常处理与必要的事实核验。不要把本页的简化校验器用于生产安全边界。</p></div>
+        </section>
+        <section id="evidence" class="hw-section">
+          <span class="hw-eyebrow">05 / Evidence, not a simulation</span><h2>真实做过的，和还没有做的。</h2>
+          <p class="hw-section-intro">Hermes 在这里是完成检查、文件处理和网页开发的工具，不是本次作业的知识主体。下面区分会话中真实执行的操作与尚缺的课堂材料。</p>
+          <ol class="hw-evidence">
+            <li><span class="hw-tag">已执行 / 环境检查</span><h3>读取工程，而不是猜测技术栈</h3><p>工具读取 package.json、锁文件、配置与 Git 状态，确认 Astro 5.13.10、Tailwind 3.4.19、Svelte 5.39.8 和 pnpm 9.14.4。保留已有备案链接、文章、图片和换行符差异。</p><p class="hw-small">依据：本地实验记录 codex/hermes-lab/environment-summary.md。</p></li>
+            <li><span class="hw-tag">已执行 / 文件处理</span><h3>提取 → 写入 → 重新读取 → 核对</h3><p>生成环境摘要后重新读取文件，并用程序核对 packageManager、11 个 scripts 和 14 项相关依赖。这证明了文件处理链路，不证明调用过模型 Structured Outputs API。</p></li>
+            <li><span class="hw-tag">已执行 / 开发前基线</span><h3>定位一次真实的跨平台构建失败</h3><p>WSL 中运行 pnpm build，因缺少 Linux Rollup 原生模块失败；检查到依赖为 Windows 平台后，改用已有 Windows 工具链运行同一工程。基线构建成功：16 个页面，Pagefind 索引 12 个页面。未删除依赖或重建锁文件。</p><p class="hw-small">开发前 pnpm check：2 个既存类型错误（导航主题组件、归档数据类型），记录于 homework-1-baseline.md；不是作业新增错误。</p></li>
+            <li><span class="hw-tag">已执行 / 官方资料核对</span><h3>以文档确认接口形状</h3><p>OpenAI 官方 Markdown 已读取；Anthropic 直连遇地区限制，使用官方页面的搜索索引核对参数与边界，未冒充完整直连成功。引用与访问限制保存在 structured-outputs-references.md。</p></li>
+            <li><span class="hw-tag hw-pending">待补充 / 原始材料</span><h3>Hermes 安装配置与课堂迭代证据</h3><p>安装命令、脱敏配置截图、首次启动截图、课堂指定的迭代记录尚未提供。本页不伪造安装成功截图或历史对话。后续补充时应移除 Key、Token、二维码及其他敏感信息。</p></li>
+            <li><span class="hw-tag hw-pending">未执行 / API 对照实验</span><h3>真实模型调用与结果比较</h3><p>尚未对两家 API 发起同题请求，也没有真实拒绝或截断响应。网页按钮仅运行本地校验。后续如需实测，应另行确认模型、费用与安全调用方式，再记录真实请求参数及脱敏结果。</p></li>
+          </ol>
+        </section>
+        <section id="references" class="hw-section">
+          <span class="hw-eyebrow">06 / Read further</span><h2>引用与学习总结</h2>
+          <ol class="hw-references">
+            <li id="ref-openai"><a href="https://developers.openai.com/api/docs/guides/structured-outputs" target="_blank" rel="noopener noreferrer">OpenAI · Structured model outputs ↗</a><p class="hw-small">JSON 模式与 Schema 区别、支持子集、拒绝、截断和内容错误。原文 Markdown 已核对。</p></li>
+            <li id="ref-anthropic"><a href="https://platform.claude.com/docs/en/build-with-claude/structured-outputs" target="_blank" rel="noopener noreferrer">Anthropic · Structured outputs ↗</a><p class="hw-small">output_config.format、strict tool use 与失败边界。本环境直连受地区限制，依据官方页面索引；正式调用前需再次核对。</p></li>
+            <li id="ref-migration"><a href="https://developers.openai.com/api/docs/guides/migrate-to-responses" target="_blank" rel="noopener noreferrer">OpenAI · Migrate to the Responses API ↗</a><p class="hw-small">解释 response_format 与 text.format 的接口差异。</p></li>
+          </ol>
+          <div class="hw-conclusion"><h3>我的学习总结：把保证分层，才知道哪里还需要验证。</h3><p>Prompt 表达意图；JSON 模式约束语法；Schema 约束结构。拒绝和截断先走异常分支，结构通过以后再核对事实与业务规则。本地校验实验帮我观察这些区别，但不能替代真实 API 实验。</p></div>
+          <p class="hw-small" style="margin-top: 1.3rem">交付状态：当前为 Astro 集成第一版。单文件交付要求、课堂完整验收格式与缺失材料待确认，不宣称已满足老师全部交付要求。</p>
+        </section>
+      </div>
+    </div>
+  </article>
+</HomeworkLayout>

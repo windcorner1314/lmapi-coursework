@@ -1,0 +1,32 @@
+[
+  {
+    "width": 320,
+    "client": 305,
+    "scroll": 305,
+    "overflow": false
+  },
+  {
+    "width": 375,
+    "client": 360,
+    "scroll": 360,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "client": 375,
+    "scroll": 375,
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "client": 753,
+    "scroll": 753,
+    "overflow": false
+  },
+  {
+    "width": 1280,
+    "client": 1265,
+    "scroll": 1265,
+    "overflow": false
+  }
+]

@@ -1,0 +1,237 @@
+{
+  "kind": "archival provenance, not proof of model API execution",
+  "files": [
+    {
+      "source_relative": "src/pages/homework/index.astro",
+      "archive_relative": "src/pages/homework/index.astro",
+      "source_sha256": "a7c17075bca9a8a1e3b06e4f9e7811d00a92aeb409074cab85d8e346f42b8fab",
+      "archive_sha256": "a7c17075bca9a8a1e3b06e4f9e7811d00a92aeb409074cab85d8e346f42b8fab",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "src/pages/homework/1.astro",
+      "archive_relative": "src/pages/homework/1.astro",
+      "source_sha256": "0fe00580a4d3d090e02d798fb3054f42a7529b788d309f7f8ca19b0a62e75de7",
+      "archive_sha256": "0fe00580a4d3d090e02d798fb3054f42a7529b788d309f7f8ca19b0a62e75de7",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "src/layouts/HomeworkLayout.astro",
+      "archive_relative": "src/layouts/HomeworkLayout.astro",
+      "source_sha256": "4369e6f85c45c6c1d24d43aed6cd5127bc950f55a930c87cdc74ba3fc7624f59",
+      "archive_sha256": "4369e6f85c45c6c1d24d43aed6cd5127bc950f55a930c87cdc74ba3fc7624f59",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "src/components/homework/JsonLab.astro",
+      "archive_relative": "src/components/homework/JsonLab.astro",
+      "source_sha256": "5d786ef6234bb43fb7b660c1c599c01d7c7a5f8c2dde21fa13015336dc622c2a",
+      "archive_sha256": "5d786ef6234bb43fb7b660c1c599c01d7c7a5f8c2dde21fa13015336dc622c2a",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "src/components/homework/validator.ts",
+      "archive_relative": "src/components/homework/validator.ts",
+      "source_sha256": "f2940030eb4deced590f185403cd608cff5082f20facefbaeda982b744d47e3c",
+      "archive_sha256": "f2940030eb4deced590f185403cd608cff5082f20facefbaeda982b744d47e3c",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "src/styles/homework.css",
+      "archive_relative": "src/styles/homework.css",
+      "source_sha256": "6bf3dab599f7065b95dc45af5d0a4a34400e4bcba7b53a383a88df50bd7e3cc7",
+      "archive_sha256": "6bf3dab599f7065b95dc45af5d0a4a34400e4bcba7b53a383a88df50bd7e3cc7",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "scripts/homework-pages.test.mjs",
+      "archive_relative": "scripts/homework-pages.test.mjs",
+      "source_sha256": "44845cd66cb2304e0e33b3267cc4516e646c26bd48845ad67b092bd4a71330e0",
+      "archive_sha256": "44845cd66cb2304e0e33b3267cc4516e646c26bd48845ad67b092bd4a71330e0",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "scripts/homework-validator.test.mjs",
+      "archive_relative": "scripts/homework-validator.test.mjs",
+      "source_sha256": "012599a3ed9bf328da540915f04c55e9694c9626f9dd1708e77a86a82204b5e5",
+      "archive_sha256": "012599a3ed9bf328da540915f04c55e9694c9626f9dd1708e77a86a82204b5e5",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "homework-shared.patch",
+      "archive_relative": "integration/homework-shared.patch",
+      "source_sha256": "5c29b9a8cf2211a9d668a648138308d7975092928c4d921c20066da665cf2fb4",
+      "archive_sha256": "5c29b9a8cf2211a9d668a648138308d7975092928c4d921c20066da665cf2fb4",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "LICENSE",
+      "archive_relative": "integration/FUWARI-LICENSE.txt",
+      "source_sha256": "558c6b8e055a1a46943a34b8d11faef1ed144fbbc8b6f19dd84cb7238a328409",
+      "archive_sha256": "558c6b8e055a1a46943a34b8d11faef1ed144fbbc8b6f19dd84cb7238a328409",
+      "mode": "byte-identical",
+      "notes": ""
+    },
+    {
+      "source_relative": "codex/hermes-lab/environment-summary.md",
+      "archive_relative": "evidence/records/environment-summary.md",
+      "source_sha256": "df70f666b5b2ace3874b819c2ea4debbef16c9d92bcbfc474ffb44f28bd29ae9",
+      "archive_sha256": "705e382b07a160b752a2859acfab50f00226c018871c81510df692fc1da8d924",
+      "mode": "redacted-text",
+      "notes": "Paths replaced; UTF-8/LF public copy; historical statements preserved"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-baseline.md",
+      "archive_relative": "evidence/records/homework-1-baseline.md",
+      "source_sha256": "2a4cac1260736e3beb35dd290bf4a67aa353c378bc0e71f7f84c8ba338b59e75",
+      "archive_sha256": "340fcf03e4361cfd90c006a4c267ab3e741f6c873c6472003b71d1f38db734ea",
+      "mode": "redacted-text",
+      "notes": "Paths replaced; UTF-8/LF public copy; historical statements preserved"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-verification.md",
+      "archive_relative": "evidence/records/homework-1-verification.md",
+      "source_sha256": "b111d9a5698acb8805f7c031d945c8a75aeffdf4defc657469992d3d284c6874",
+      "archive_sha256": "347c72cc2c49e9172dbf22eabfc7f7ce56da2ef5e9b05af4c3a82b3b0ffe88e6",
+      "mode": "redacted-text",
+      "notes": "Paths replaced; UTF-8/LF public copy; historical statements preserved"
+    },
+    {
+      "source_relative": "codex/hermes-lab/structured-outputs-references.md",
+      "archive_relative": "evidence/records/structured-outputs-references.md",
+      "source_sha256": "fed90d5d17ab4f4105368da2f724a6bc12fcab25af60584e92cf685e2198d236",
+      "archive_sha256": "33f19aa9b04cccebb5f2e7127c2dad4fee16b29f8bd643b20c35058b66222744",
+      "mode": "redacted-text",
+      "notes": "Paths replaced; UTF-8/LF public copy; historical statements preserved"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-check.log",
+      "archive_relative": "evidence/records/homework-1-check.log",
+      "source_sha256": "c73cefd1c8c02c18b453001647655df66561d577c3e6427f3912f93840169cea",
+      "archive_sha256": "14351288c82286a9e92908731c42c8dd742df0aa2d77e962a0080421ca102685",
+      "mode": "redacted-text",
+      "notes": "Paths replaced; UTF-8/LF public copy; historical statements preserved"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-tests.log",
+      "archive_relative": "evidence/records/homework-1-tests.log",
+      "source_sha256": "420ac2fa34b586b49fa58aa085fbe4f6f84b08b103a62fd8a18b44dff1a206fb",
+      "archive_sha256": "420ac2fa34b586b49fa58aa085fbe4f6f84b08b103a62fd8a18b44dff1a206fb",
+      "mode": "redacted-text",
+      "notes": "Paths replaced; UTF-8/LF public copy; historical statements preserved"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/blog-responsive-results.json",
+      "archive_relative": "evidence/browser-results/blog-responsive-results.json",
+      "source_sha256": "741802d887b6f2a7d73dc28f4448cfc75f5c6878189a1b6cea9de8097833348d",
+      "archive_sha256": "74116ec427ef780298518ba2c100e6b218914e3f3531f7a0a576665a1c51f529",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-accessibility-results.json",
+      "archive_relative": "evidence/browser-results/homework-accessibility-results.json",
+      "source_sha256": "7c07c734da54b374f2887434b42cfa405e25b302f3687cf22db7819d956f5b7f",
+      "archive_sha256": "da52963205bf6c2381f0f0accf15253559183f7e77b1e17af7c3afdf1c2c5aa4",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-blog-regression.json",
+      "archive_relative": "evidence/browser-results/homework-blog-regression.json",
+      "source_sha256": "bfb0793e7a25ce2a7366c596111c30837ccb7e6d8da5ea4f322c429d2323e59b",
+      "archive_sha256": "c564932c5001abef05b31f414e1557306c2a5d76b76dcff1cf28272b4c274d49",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-index-responsive.json",
+      "archive_relative": "evidence/browser-results/homework-index-responsive.json",
+      "source_sha256": "acfd5364c3e58d3e2e5952691fb62127b011fec154c3c7462c6418e5a74ae903",
+      "archive_sha256": "c7bd57424725800001f714e1b54bb83e59f9795138b56d1f576b22af24253aea",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-navigation-results.json",
+      "archive_relative": "evidence/browser-results/homework-navigation-results.json",
+      "source_sha256": "34f6babdaa256f48c0c19a8ec24bd62c819ba6b3025975517494007866a21186",
+      "archive_sha256": "cb949c947e3da468fdbe800d5e7ab79d6fd501e35a3a0c78989691e881deee15",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-reentry-samples.json",
+      "archive_relative": "evidence/browser-results/homework-reentry-samples.json",
+      "source_sha256": "2a8cce40f45d7430d793525f632054f84548a4764bb37b5afd2aef6f0c14aa56",
+      "archive_sha256": "8422e4dee27491003918d0d99e2a3dd19de234766d30015414582d8f83aa3cc3",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-responsive-fixed.json",
+      "archive_relative": "evidence/browser-results/homework-responsive-fixed.json",
+      "source_sha256": "dca77badbc353bdccbf2aece62cdccdf1fae3d58e1f6aa6aaea6a5ae4547ac5a",
+      "archive_sha256": "6e59d77a7648276ad2006a6ab7f668daa6d15a0b530ee96c39e5a4948fae2c92",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-responsive-results.json",
+      "archive_relative": "evidence/browser-results/homework-responsive-results.json",
+      "source_sha256": "ee21f72bd2896a61c02941b87ddaf9ffdf26069ba1b427b00c8fd568c82d38fe",
+      "archive_sha256": "f01c3938e6fa4f641c72b53eb807a5df5e5651ad744ba72b44dd87ff553b3079",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-sample-results.json",
+      "archive_relative": "evidence/browser-results/homework-sample-results.json",
+      "source_sha256": "2a8cce40f45d7430d793525f632054f84548a4764bb37b5afd2aef6f0c14aa56",
+      "archive_sha256": "8422e4dee27491003918d0d99e2a3dd19de234766d30015414582d8f83aa3cc3",
+      "mode": "redacted-json",
+      "notes": "Ephemeral document UUIDs replaced with consistent aliases; results unchanged"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-desktop.png",
+      "archive_relative": "evidence/screenshots/homework-desktop.png",
+      "source_sha256": "8d9b9e6f8a9bc9ecc4a36785a6c477920ff5a9f1e9aeb40939accf0586403a37",
+      "archive_sha256": "8d9b9e6f8a9bc9ecc4a36785a6c477920ff5a9f1e9aeb40939accf0586403a37",
+      "mode": "byte-identical",
+      "notes": "Course page only; blog screenshots excluded"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-mobile.png",
+      "archive_relative": "evidence/screenshots/homework-mobile.png",
+      "source_sha256": "5b6f4704152712815024951569dc48fa2eca6b8df15a3cdd64762b6bebfc439f",
+      "archive_sha256": "5b6f4704152712815024951569dc48fa2eca6b8df15a3cdd64762b6bebfc439f",
+      "mode": "byte-identical",
+      "notes": "Course page only; blog screenshots excluded"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-index-mobile.png",
+      "archive_relative": "evidence/screenshots/homework-index-mobile.png",
+      "source_sha256": "b29746d1fbff44238b7dbc4e1328da8756540b3d7a6abebd42e07bc67edf9d0f",
+      "archive_sha256": "b29746d1fbff44238b7dbc4e1328da8756540b3d7a6abebd42e07bc67edf9d0f",
+      "mode": "byte-identical",
+      "notes": "Course page only; blog screenshots excluded"
+    },
+    {
+      "source_relative": "codex/hermes-lab/homework-1-qa/homework-api-mobile.png",
+      "archive_relative": "evidence/screenshots/homework-api-mobile.png",
+      "source_sha256": "9cbbe90862ec11ddff8b04a2fa9b02fa169dfe258b60335e9402c9e1888fec06",
+      "archive_sha256": "9cbbe90862ec11ddff8b04a2fa9b02fa169dfe258b60335e9402c9e1888fec06",
+      "mode": "byte-identical",
+      "notes": "Course page only; blog screenshots excluded"
+    }
+  ]
+}

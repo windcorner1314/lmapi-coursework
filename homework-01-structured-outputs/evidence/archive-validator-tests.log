@@ -1,0 +1,16 @@
+✔ exports the exact fixed teaching schema (1.57239ms)
+✔ accepts a valid object including zero and false (0.280312ms)
+✔ requires every field as an own property (0.759686ms)
+✔ enforces field types without coercion, rejecting fractions and infinity (0.265573ms)
+✔ rejects extra own keys including prototype-related names (0.333336ms)
+✔ exports six local teaching samples with verified expectations (0.958667ms)
+✔ rejects non-object roots including null and arrays (0.106715ms)
+✔ syntax failures do not attempt schema validation or execute code (0.143092ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.63925

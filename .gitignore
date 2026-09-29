@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+*.pem
+*.key
+private-local/
+raw-ai-exports/
+.DS_Store
+Thumbs.db
