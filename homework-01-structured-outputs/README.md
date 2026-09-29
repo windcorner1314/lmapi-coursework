@@ -17,6 +17,7 @@ B：从“请输出 JSON”到 Schema 约束。
 | 源码与集成说明 | 已归档：六个实现文件、两个测试脚本及两处共享配置增量 |
 | 自动测试与本地页面验收 | 已完成：原工程 11/11 测试通过；归档校验器 8/8、临时配置集成测试 11/11 通过；浏览器数据及截图保留 |
 | 线上页面可访问性 | 已核对：两条作业 URL 均返回 HTTP 200，最终 URL 不变，标题与正文符合对应作业页面 |
+| 智能体交互记录 | 已归档：[四阶段原始消息公开副本](ai-records/README.md)，共 311 条，包含学生指令、助手回复、调用参数与工具结果 |
 
 建议评阅顺序：打开网页体验实验台 → 阅读学习笔记 → 查看测试与源码。集中说明见 [交付范围与证据说明](docs/missing-materials.md)。
 
@@ -41,7 +42,7 @@ B：从“请输出 JSON”到 Schema 约束。
 | 历史验收 | [verification](evidence/records/homework-1-verification.md) |
 | 日志、截图与浏览器数据 | [evidence](evidence/README.md) |
 | 公开副本与脱敏规则 | [provenance](docs/provenance.md)、[来源哈希](evidence/source-manifest.json) |
-| AI 辅助过程 | [ai-records](ai-records/README.md) |
+| 智能体交互记录（重点评阅入口） | [对话与工具记录](ai-records/README.md) |
 | 学习笔记（AI 辅助整理） | [reflection](docs/reflection.md) |
 | 交付范围与证据说明 | [范围说明](docs/missing-materials.md) |
 | 本次归档检查 | [archive-verification](docs/archive-verification.md) |
@@ -52,7 +53,7 @@ B：从“请输出 JSON”到 Schema 约束。
 
 浏览器记录包括六种样例、导航、刷新、键盘与移动端。保留手机横溢的失败测量和修正后数据。评论后端本地未启动，只确认页面布局，未确认评论数据功能。
 
-用户提供过服务器构建成功结果。本轮另核对线上目录和主页面的 HTTP 状态、最终 URL、页面标题及正文，确认不是首页回退。本次线上读取没有操作按钮，不替代本地浏览器交互测试。现存聊天记录快照已从会话数据库导出到本地审阅目录，尚未纳入公开仓库；公开材料覆盖范围集中列于范围说明。
+用户提供过服务器构建成功结果，原消息公开副本已归档于交互记录第三部分。另已核对线上目录和主页面的 HTTP 状态、最终 URL、页面标题及正文，确认不是首页回退；该读取不替代本地浏览器交互测试。会话公开副本已加入 ai-records，覆盖范围、脱敏规则及原输出截断等限制见导出说明。
 
 ## 使用方式
 

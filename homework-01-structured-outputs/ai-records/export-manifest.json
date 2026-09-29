@@ -1,0 +1,155 @@
+{
+  "source": "read-only query of current Hermes CLI session database; public message fields only",
+  "scope": "existing messages with database id <=409: initial inspection through Git whitespace discussion; later export/README maintenance turns excluded to avoid recursive transcripts",
+  "source_row_count": 334,
+  "exported_message_count": 311,
+  "roles": {
+    "user": 25,
+    "assistant": 127,
+    "tool": 157,
+    "runtime_notification": 2
+  },
+  "excluded_rows": [
+    {
+      "message_id": 6,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 41,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 54,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 60,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 61,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 70,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 79,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 80,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 197,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 242,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 244,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 266,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 286,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 296,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 320,
+      "reason": "runtime context summary, not original dialogue"
+    },
+    {
+      "message_id": 327,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 348,
+      "reason": "runtime task/context injection, not student speech"
+    },
+    {
+      "message_id": 350,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 352,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 364,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 366,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 374,
+      "reason": "internal skill text or tool schema"
+    },
+    {
+      "message_id": 406,
+      "reason": "internal skill text or tool schema"
+    }
+  ],
+  "redaction_counts": {
+    "environment-path-or-host": 356,
+    "windows-project-path": 42,
+    "user-home": 13,
+    "account-sid": 5,
+    "token": 0,
+    "private-key": 0,
+    "bearer": 0,
+    "network-address": 9
+  },
+  "files": [
+    {
+      "file": "transcripts/01-environment-and-development.md",
+      "message_count": 103,
+      "first_id": 1,
+      "last_id": 179,
+      "sha256": "7e85534d66c0e5232e83283279dcc1034a91feb389b8e67c0d4b84622657cf05"
+    },
+    {
+      "file": "transcripts/02-verification-and-fixes.md",
+      "message_count": 74,
+      "first_id": 187,
+      "last_id": 263,
+      "sha256": "8440c17e7fbb1b6d5ca6d280352d00a2137d1963810ad7d1e3778cc0fcd0b688"
+    },
+    {
+      "file": "transcripts/03-deployment-guidance.md",
+      "message_count": 19,
+      "first_id": 264,
+      "last_id": 283,
+      "sha256": "a5e47f44a5c4d5269f07c2bbc2ab0ea16ab464689ef1a52df0686c6f34eb9dec"
+    },
+    {
+      "file": "transcripts/04-coursework-archive.md",
+      "message_count": 115,
+      "first_id": 284,
+      "last_id": 409,
+      "sha256": "64f51606f99f93f535b0e59c45c468609703752bc8f5caa988f9e442876163af"
+    }
+  ],
+  "jsonl_sha256": "00ce1f8b57917c638f1a77a172133db74602dd63b8215e543b453373d3a09f27",
+  "limitations": [
+    "Not an assertion that every original message survived database compaction",
+    "Duplicate/replayed database messages retained in source order",
+    "Tool output may already be truncated; no fabricated restoration",
+    "Child-agent sessions and screenshot image bytes not embedded",
+    "Internal reasoning/system prompts/authentication files not queried",
+    "No API experiment was performed by this export"
+  ]
+}

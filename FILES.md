@@ -1,13 +1,20 @@
 # 本地文件清单
 
-共 46 个工作区文件（不含 .git；包含本清单）。所有新增资料尚未提交或推送。
+共 53 个公开归档文件（不含 .git、被忽略的 private-local；包含本清单）。是否已提交或推送以 Git 实际状态为准，本清单不代表远端状态。
 
 - `.gitignore`
 - `FILES.md`
 - `README.md`
 - `homework-01-structured-outputs/README.md`
 - `homework-01-structured-outputs/ai-records/README.md`
+- `homework-01-structured-outputs/ai-records/export-manifest.json`
+- `homework-01-structured-outputs/ai-records/export-notes.md`
+- `homework-01-structured-outputs/ai-records/interaction-records.jsonl`
 - `homework-01-structured-outputs/ai-records/task-brief.md`
+- `homework-01-structured-outputs/ai-records/transcripts/01-environment-and-development.md`
+- `homework-01-structured-outputs/ai-records/transcripts/02-verification-and-fixes.md`
+- `homework-01-structured-outputs/ai-records/transcripts/03-deployment-guidance.md`
+- `homework-01-structured-outputs/ai-records/transcripts/04-coursework-archive.md`
 - `homework-01-structured-outputs/docs/archive-verification.md`
 - `homework-01-structured-outputs/docs/missing-materials.md`
 - `homework-01-structured-outputs/docs/process.md`
