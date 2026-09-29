@@ -6,4 +6,4 @@
 - `source-manifest.json`：来源相对路径、处理方式、原件与副本 SHA-256。
 - 本次归档验证另见 [archive-verification](../docs/archive-verification.md)，不要与历史构建/浏览器验收混淆。
 
-缺少完整 AI 对话与服务器原始导出；详见 [缺失材料](../docs/missing-materials.md)。
+本目录保存实际获得的证据；线上访问核对、聊天导出状态及测试范围集中见 [交付范围与证据说明](../docs/missing-materials.md)。

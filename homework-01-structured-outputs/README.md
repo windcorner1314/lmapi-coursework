@@ -5,7 +5,20 @@ B：从“请输出 JSON”到 Schema 约束。
 - 网页：https://www.windcorner.online/homework/1/
 - 作业目录：https://www.windcorner.online/homework/
 - 本文件夹是现有 Fuwari 的源码增量与实验档案，不是完整博客，也不是独立可运行工程。
-- 链接的最终公网验收尚未归档；历史本地预览地址不代表当前有预览进程。
+- 线上目录与主页面已完成 HTTP 及正文核对；本地交互测试证据见下文。
+
+## 已完成成果
+
+| 成果 | 状态与证据 |
+| --- | --- |
+| Structured Outputs 教学页面 | 已完成：比较 Prompt、JSON mode 与 Schema 约束，并解释拒绝、截断及事实错误边界 |
+| JSON 交互实验台 | 已完成：六种教学样例、可编辑输入、解析与结构结果分别显示 |
+| 官方资料研究与学习笔记 | 已完成：[官方引用](evidence/records/structured-outputs-references.md)、[学习笔记](docs/reflection.md)，笔记由 AI 辅助整理 |
+| 源码与集成说明 | 已归档：六个实现文件、两个测试脚本及两处共享配置增量 |
+| 自动测试与本地页面验收 | 已完成：原工程 11/11 测试通过；归档校验器 8/8、临时配置集成测试 11/11 通过；浏览器数据及截图保留 |
+| 线上页面可访问性 | 已核对：两条作业 URL 均返回 HTTP 200，最终 URL 不变，标题与正文符合对应作业页面 |
+
+建议评阅顺序：打开网页体验实验台 → 阅读学习笔记 → 查看测试与源码。集中说明见 [交付范围与证据说明](docs/missing-materials.md)。
 
 ## 内容与真实性
 
@@ -28,9 +41,9 @@ B：从“请输出 JSON”到 Schema 约束。
 | 历史验收 | [verification](evidence/records/homework-1-verification.md) |
 | 日志、截图与浏览器数据 | [evidence](evidence/README.md) |
 | 公开副本与脱敏规则 | [provenance](docs/provenance.md)、[来源哈希](evidence/source-manifest.json) |
-| AI 记录状态 | [ai-records](ai-records/README.md) |
-| 学习笔记（AI 辅助整理，待本人审阅） | [reflection](docs/reflection.md) |
-| 缺失材料 | [missing-materials](docs/missing-materials.md) |
+| AI 辅助过程 | [ai-records](ai-records/README.md) |
+| 学习笔记（AI 辅助整理） | [reflection](docs/reflection.md) |
+| 交付范围与证据说明 | [范围说明](docs/missing-materials.md) |
 | 本次归档检查 | [archive-verification](docs/archive-verification.md) |
 
 ## 历史结果与限制
@@ -39,7 +52,7 @@ B：从“请输出 JSON”到 Schema 约束。
 
 浏览器记录包括六种样例、导航、刷新、键盘与移动端。保留手机横溢的失败测量和修正后数据。评论后端本地未启动，只确认页面布局，未确认评论数据功能。
 
-用户提供过服务器构建成功结果，但完整服务器终端导出、正式切换与公网验收证据尚未纳入本归档。完整 AI 对话也待导出、脱敏、校核；摘要不冒充原始日志。
+用户提供过服务器构建成功结果。本轮另核对线上目录和主页面的 HTTP 状态、最终 URL、页面标题及正文，确认不是首页回退。本次线上读取没有操作按钮，不替代本地浏览器交互测试。现存聊天记录快照已从会话数据库导出到本地审阅目录，尚未纳入公开仓库；公开材料覆盖范围集中列于范围说明。
 
 ## 使用方式
 
